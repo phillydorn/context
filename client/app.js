@@ -2,16 +2,20 @@
 
 angular.module('context', [
   'ngRoute',
-  'context.test',
-  'context.services'
+  'context.accounts',
+  'context.services',
+  'context.messages'
   ])
 
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: './test.html',
-      controller: 'testCtrl',
-      authenticate: false
+      templateUrl: './accounts.html',
+      controller: 'accountCtrl'
+    })
+    .when('/messages', {
+      templateUrl: './messages.html',
+      controller: 'messageCtrl'
     })
     .otherwise({
       redirectTo: '/'

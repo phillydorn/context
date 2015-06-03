@@ -7,7 +7,7 @@ module.exports = function (app) {
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());
 
-  app.use('/api/mail', mailRouter);
+  app.use('/api', mailRouter);
 
   require('./routers/mailRouter.js')(mailRouter);
 };

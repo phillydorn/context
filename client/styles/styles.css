@@ -1,0 +1,21 @@
+#accountPage {
+  height: 100%;
+  background-image: url('/styles/junkMail.jpg');
+  background-size: cover;
+}
+
+.emails {
+  width: 40%;
+  display: block;
+  margin: 5px auto;
+}
+
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(238,238,238,.75);
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
