@@ -25,13 +25,14 @@ module.exports = {
     });
   },
 
-  getMessages: function(req, res) {
+  getMessagesById: function(req, res) {
     var id = req.url.split('/').slice(2)[0];
     ctxioClient.accounts(id).messages().get({limit:100}, function (err, response) {
       if (err) throw err;
       var results = response.body.filter(function (message) {
         return message['list_headers'] && message['list_headers']['list-unsubscribe'];
       })
+      console.log('results', results)
       res.send({results: results});
     });
   },

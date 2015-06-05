@@ -10,7 +10,7 @@ angular.module('context.messages', [])
 
   $scope.selectAddress = function(address) {
     $scope.selectedAddresses.push(address)
-    console.log($scope.selectedAddresses)
+    Mail.getMessagesBySender(address);
   }
 
   $scope.filterMessages = function() {

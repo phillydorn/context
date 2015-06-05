@@ -2,8 +2,6 @@ angular.module('context.services', [])
 
 .factory('Mail', function ($http, $location){
 
-  var addressList =[];
-  var id;
 
   var getAccounts = function($scope) {
     return $http({
@@ -17,29 +15,39 @@ angular.module('context.services', [])
     })
   }
 
-  var getMessages = function(id) {
+  var getMessagesForAccount = function(id) {
     var that = this;
     this.id = id;
+    this.messageList = [];
     return $http({
       method: "GET",
       url: "api/messages/" + id
     })
     .then (function (messages){
-      var obj = {};
+      var messageObj = {};
       messages.data.results.forEach(function (message){
+        var subject = message.subject;
         var from = message.addresses.from.email;
-        if (!obj[from]) {
-          obj[from] = true;
+        if (!messageObj[from]) {
+          messageObj[from] = {
+            address: from,
+            subjects: []
+          };
         }
-
+        messageObj[from].subjects.push(subject);
       })
-      that.addressList = Object.keys(obj);
+      for (var key in messageObj) {
+        console.log(that)
+        that.messageList.push(messageObj[key]);
+      }
+      // that.addressList = Object.key(messageList);
+      console.log('addresses', that.messageList)
       $location.path('/messages');
     })
   }
 
   var displayMessages = function ($scope) {
-    $scope.addresses = this.addressList;
+    $scope.messages = this.messageList;
   }
 
   var unsubscribe = function (addresses) {
@@ -60,7 +68,7 @@ angular.module('context.services', [])
 
 return {
   getAccounts: getAccounts,
-  getMessages: getMessages,
+  getMessagesForAccount: getMessagesForAccount,
   displayMessages: displayMessages,
   unsubscribe: unsubscribe
 }

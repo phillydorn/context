@@ -7,6 +7,6 @@ angular.module('context.accounts', [])
   }();
 
   $scope.fetchMessages = function(account){
-    Mail.getMessages(account.id);
+    Mail.getMessagesForAccount(account.id);
   }
 });

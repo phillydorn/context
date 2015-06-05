@@ -86,7 +86,21 @@ h2 {
   font-weight: normal;
 }
 
-#messagePage h1 {
+.messageContainer {
+  background-color: rgba(230,230,230,.5)
+}
+
+.message-group {
+  clear: left;
+}
+
+#messagePage h1,h3 {
   color: #FFBA31;
 }
+
+#submit {
+  margin: 0 auto;
+  clear: both;
+}
+
 
