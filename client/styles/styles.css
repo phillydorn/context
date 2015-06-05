@@ -3,7 +3,9 @@
   background-image: url('/styles/junkMail.jpg');
   background-size: cover;
 }
-
+.addresses {
+  margin: 5px auto;
+}
 .emails {
   width: 40%;
   display: block;
@@ -18,4 +20,10 @@
 .jumbotron .btn {
   padding: 14px 24px;
   font-size: 21px;
+}
+
+.selected {
+   color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
 }
