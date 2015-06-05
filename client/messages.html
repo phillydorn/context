@@ -1,8 +1,12 @@
-<div class="container">
-  <h3>Please select the e-mail list addresses you'd like to delete:</h3>
-  <div class="btn-group-vertical" data-toggle = "buttons-checkbox">
-    <button class="btn btn-success addresses" type="button" ng-repeat = "address in addresses" ng-click = "selectAddress(address)" toggle-class = "selected">{{address}}</button>
-    <button class = "btn btn-success" ng-click="filterMessages()" id="submit" >Submit</button>
+<div id="messagePage">
+  <div class="container">
+    <div class = "jumbotron">
+      <h2>Please select the e-mail list addresses you'd like to delete:</h3>
+      <div class="btn-group-vertical" data-toggle = "buttons-checkbox">
+        <button class="btn btn-success addresses" type="button" ng-repeat = "address in addresses" ng-click = "selectAddress(address)" toggle-class = "selected">{{address}}</button>
+        <button class = "btn btn-primary" ng-click="filterMessages()" id="submit" >Submit</button>
+      </div>
+    </div>
   </div>
 </div>
 

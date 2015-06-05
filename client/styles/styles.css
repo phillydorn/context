@@ -3,6 +3,12 @@
   background-image: url('/styles/junkMail.jpg');
   background-size: cover;
 }
+
+#messagePage {
+  height: 100%;
+  background-image: url('/styles/junkMail2.jpg');
+  background-size: cover;
+}
 .addresses {
   margin: 5px auto;
 }

@@ -26,9 +26,7 @@ angular.module('context.services', [])
     })
     .then (function (messages){
       var obj = {};
-      console.log('messages',messages);
       messages.data.results.forEach(function (message){
-        console.log(message)
         var from = message.addresses.from.email;
         if (!obj[from]) {
           obj[from] = true;
@@ -46,7 +44,6 @@ angular.module('context.services', [])
 
   var unsubscribe = function (addresses) {
     var id = this.id;
-    console.log(addresses)
     return $http({
       method: 'POST',
       url: 'api/messages',
@@ -56,7 +53,8 @@ angular.module('context.services', [])
       }
     })
     .then (function() {
-      return
+      bootbox.alert("Your messages have been deleted!");
+      $location.path('/');
     });
   }
 
