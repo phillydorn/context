@@ -1,13 +1,9 @@
 
 
 <div id="accountPage">
-  <div class ="container">
-     <div class="jumbotron">
-        <h1>JunkOut</h1>
-        <h2>Thin out your inbox!</h2>
-        <p class="lead">Please select an e-mail account to get started:</p>
+  <h1>JunkOut</h1>
+  <h2>Thin out your inbox!</h2>
+  <p class="lead">Please select an e-mail account to get started:</p>
 
-        <button class="btn btn-lg btn-success emails" role="button" ng-repeat = "account in accounts" ng-click = "fetchMessages(account)" >{{account.address}}</button>
-      </div>
-    </div>
+  <button class="emails" role="button" ng-repeat = "account in accounts" ng-click = "fetchMessages(account)" >{{account.address}}</button>
 </div>
