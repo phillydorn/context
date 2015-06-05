@@ -6,11 +6,11 @@
   "dependencies": {
     "body-parser": "^1.12.4",
     "bootbox": "^4.4.0",
+    "bower": "^1.4.1",
     "contextio": "^0.4.0",
     "express": "^4.12.4"
   },
   "devDependencies": {},
-
   "scripts": {
     "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
