@@ -1,9 +1,10 @@
 var ContextIO = require ('contextio');
+var keys = require('../../keys');
 var ctxioClient = new ContextIO.Client({
-  key: "y8dmwfnv",
-  secret: "HCWlxpe9C7iTW6GG"
+  key: keys.contextKey,
+  secret: keys.contextSecret
 })
-var id = "556e48c0bc63ad65098b4575";
+var id = keys.id;
 
 module.exports = {
 
