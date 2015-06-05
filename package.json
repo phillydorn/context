@@ -10,6 +10,8 @@
     "express": "^4.12.4"
   },
   "devDependencies": {},
+  "postinstall": "bower install",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
