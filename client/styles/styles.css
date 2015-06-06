@@ -1,14 +1,13 @@
 #accountPage {
   background-color: #F9CEB6;
   height: 100%;
-  background: url("./web.svg") repeat center center,
+  background: url("./web.svg") no-repeat center center fixed  ,
                     -webkit-linear-gradient(top, #F9CEB6, #F5B6B1);
   background: url("./web.svg") repeat center center,
                     linear-gradient(to bottom, #F9CEB6, #F5B6B1);
-  background-size: 130%, 100%;
+  background-size: cover;
   background-attachment: fixed;
   padding: 120px 0 80px;
-  margin-top: -85px;
   text-align: center;
 }
 
@@ -25,7 +24,7 @@ body {
 
 button {
   border: none;
-  border-radius: 3px;
+  border-radius: 8px;
   background: #F95646;
   color: #fff;
   display: inline-block;
@@ -89,7 +88,9 @@ h2 {
   margin: 0 auto 2em;
   font-weight: normal;
 }
-
+.messageContainer {
+  width: 50%;
+}
 
 .message-group {
   box-sizing: border-box;

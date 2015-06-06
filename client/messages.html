@@ -3,7 +3,7 @@
   <div data-toggle = "buttons-checkbox" class = "container messageContainer">
     <div class = "message-group" ng-repeat = "message in messages">
       <p class = "col-md-offset-1" ng-repeat= "subject in message.subjects">{{subject}}</p>
-      <button class="addresses btn-select col-md-offset-3 col-md-5" type="button" ng-click = "selectAddress(address)" toggle-class = "selected">{{message.address}}</button>
+      <button class="addresses btn-select col-md-offset-3" type="button" ng-click = "selectAddress(address)" toggle-class = "selected">{{message.address}}</button>
     </div>
     <button class = "btn-select" ng-click="filterMessages()" id="submit" >Submit</button>
   </div>
