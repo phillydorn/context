@@ -37,10 +37,8 @@ angular.module('context.services', [])
         messageObj[from].subjects.push(subject);
       })
       for (var key in messageObj) {
-        console.log(that)
         that.messageList.push(messageObj[key]);
       }
-      // that.addressList = Object.key(messageList);
       console.log('addresses', that.messageList)
       $location.path('/messages');
     })

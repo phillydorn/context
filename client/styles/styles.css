@@ -41,6 +41,7 @@ button:hover {
   color: #fff;
 }
 
+
 .btn-select {
   background: none;
   border: 3px solid #FFBA31;
@@ -57,6 +58,9 @@ button:hover {
   background: none;
   border-color: white;
   color: white;
+}
+.addresses {
+  font-size: 16px;
 }
 
 .selected {
@@ -86,12 +90,11 @@ h2 {
   font-weight: normal;
 }
 
-.messageContainer {
-  background-color: rgba(230,230,230,.5)
-}
 
 .message-group {
+  box-sizing: border-box;
   clear: left;
+  background-color: rgba(230,230,230,.5);
 }
 
 #messagePage h1,h3 {
