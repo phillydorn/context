@@ -96,10 +96,17 @@ h2 {
   box-sizing: border-box;
   clear: left;
   background-color: rgba(230,230,230,.5);
+  min-height: 35px;
 }
 
 #messagePage h1,h3 {
   color: #FFBA31;
+}
+
+.showHide {
+  font-size: 11px;
+  background: #fff;
+  color: #333;
 }
 
 #submit {

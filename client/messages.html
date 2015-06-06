@@ -1,13 +1,11 @@
 <div id="messagePage">
   <h1 class = "message-headline">Please select the e-mail list addresses you'd like to delete:</h1>
-  <div data-toggle = "buttons-checkbox" class = "container messageContainer">
+  <form class = "container messageContainer">
     <div class = "message-group" ng-repeat = "message in messages">
-      <button class="addresses btn-select col-md-offset-3" type="button" ng-click = "selectAddress(address)" toggle-class = "selected">{{message.address}}</button>
-      <p class = "col-md-offset-1" ng-repeat= "subject in message.subjects">Subject: {{subject}}</p>
+      <input type="checkbox" class="addresses" value = "{{message.address}}" ng-click = "selectAddress(message.address)" toggle-class = "selected">{{message.address}}
+      <button class = "showHide" ng-click = "message.shown = !message.shown">Show/Hide E-mails</button>
+      <p class = "col-md-offset-1" ng-show="message.shown" ng-repeat= "subject in message.subjects">Subject: {{subject}}</p>
     </div>
     <button class = "btn-select" ng-click="filterMessages()" id="submit" >Submit</button>
-  </div>
+  </form>
 </div>
-
-
-

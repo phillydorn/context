@@ -37,6 +37,7 @@ angular.module('context.services', [])
         messageObj[from].subjects.push(subject);
       })
       for (var key in messageObj) {
+        messageObj[key].shown = false;
         that.messageList.push(messageObj[key]);
       }
       console.log('addresses', that.messageList)

@@ -10,11 +10,14 @@ angular.module('context.messages', [])
 
   $scope.selectAddress = function(address) {
     $scope.selectedAddresses.push(address)
-    Mail.getMessagesBySender(address);
   }
 
   $scope.filterMessages = function() {
-    bootbox.confirm("Are you sure you want to delete all messages?", function (result) {
+    var addressString = $scope.selectedAddresses.reduce(function (prev, curr) {
+      return prev + '<br>' + curr;
+    },'');
+    console.log('addressString',$scope.selectedAddresses)
+    bootbox.confirm("Are you sure you want to delete all messages from:"+ addressString, function (result) {
       if (result){
         Mail.unsubscribe($scope.selectedAddresses);
       }
