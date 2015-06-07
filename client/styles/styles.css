@@ -64,6 +64,7 @@ button:hover {
   margin: 0 auto;
   /*float: right;*/
   position: relative;
+  top: -17px;
 }
 .addresses {
   font-size: 22px;
@@ -74,17 +75,10 @@ button:hover {
   text-align: center;
 }
 
-.check {
-  float: left;
+.checker {
+  height: 20px;
+  width: 20px;
 }
-
-/*.selected {
-  margin: 5px auto;
-  background-color: #FFBA31;
-  border-color: #FFBA31;
-  color: #2B363D;
-  display: block;
-}*/
 
 .emails {
   width: 40%;
@@ -109,6 +103,8 @@ h2 {
 .messageContainer {
   width: 50%;
   background-color: rgba(230,230,230,.5);
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .message-group {
@@ -138,6 +134,7 @@ h2 {
 #submit {
   margin: 10px auto;
   clear: both;
+  font-size:18px;
 }
 
 
