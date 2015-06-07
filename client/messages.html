@@ -1,10 +1,16 @@
 <div id="messagePage">
-  <h1 class = "message-headline">Please select the e-mail list addresses you'd like to delete:</h1>
-  <form class = "container messageContainer">
-    <div class = "message-group" ng-repeat = "message in messages">
-      <input type="checkbox" class="addresses" value = "{{message.address}}" ng-click = "selectAddress(message.address)" toggle-class = "selected">{{message.address}}
-      <button class = "showHide" ng-click = "message.shown = !message.shown">Show/Hide E-mails</button>
-      <p class = "col-md-offset-1" ng-show="message.shown" ng-repeat= "subject in message.subjects">Subject: {{subject}}</p>
+  <h1 class = "message-headline">Your mailing lists</h1>
+  <h2 class = "message-headline">Please select e-mail lists to delete:</h1>
+  <form>
+    <div class="container messageContainer">
+      <div class = "message-group" ng-repeat = "message in messages">
+        <input class = "check" type="checkbox" value = "{{message.address}}" ng-click = "selectAddress(message.address)" toggle-class = "selected">
+        <div class="addressContainer">
+          <p class="addresses">{{message.address}}</p>
+          <p class = "showHide" ng-click = "message.shown = !message.shown">Show/Hide E-mails</p>
+        </div>
+        <p class="subjects" ng-show="message.shown" ng-repeat= "subject in message.subjects">Subject: {{subject}}</p>
+      </div>
     </div>
     <button class = "btn-select" ng-click="filterMessages()" id="submit" >Submit</button>
   </form>

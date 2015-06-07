@@ -58,17 +58,33 @@ button:hover {
   border-color: white;
   color: white;
 }
+
+.addressContainer {
+  width: 100% ;
+  margin: 0 auto;
+  /*float: right;*/
+  position: relative;
+}
 .addresses {
   font-size: 16px;
+  margin: 9px auto;
+  padding-top: 4px;
+  display: block;
+  width: 50%;
+  text-align: center;
 }
 
-.selected {
+.check {
+  float: left;
+}
+
+/*.selected {
   margin: 5px auto;
   background-color: #FFBA31;
   border-color: #FFBA31;
   color: #2B363D;
   display: block;
-}
+}*/
 
 .emails {
   width: 40%;
@@ -87,30 +103,38 @@ h2 {
   font-size: 21px;
   margin: 0 auto 2em;
   font-weight: normal;
+  text-align: center;
 }
+
 .messageContainer {
   width: 50%;
+  background-color: rgba(230,230,230,.5);
 }
 
 .message-group {
-  box-sizing: border-box;
   clear: left;
-  background-color: rgba(230,230,230,.5);
   min-height: 35px;
 }
 
-#messagePage h1,h3 {
+#messagePage h1, #messagePage h2 {
   color: #FFBA31;
 }
 
+
 .showHide {
-  font-size: 11px;
-  background: #fff;
   color: #333;
+  display: inline;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.subjects {
+  margin-left: 40px;
 }
 
 #submit {
-  margin: 0 auto;
+  margin: 10px auto;
   clear: both;
 }
 
