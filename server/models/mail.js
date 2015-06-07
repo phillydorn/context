@@ -27,12 +27,11 @@ module.exports = {
 
   getMessagesById: function(req, res) {
     var id = req.url.split('/').slice(2)[0];
-    ctxioClient.accounts(id).messages().get({date_after: 1420070400, folder: 'inbox'}, function (err, response) {
+    ctxioClient.accounts(id).messages().get({limit: 400, folder: 'INBOX'}, function (err, response) {
       if (err) throw err;
       var results = response.body.filter(function (message) {
         return message['list_headers'] && message['list_headers']['list-unsubscribe'];
       })
-      console.log('results', results)
       res.send({results: results});
     });
   },
@@ -40,17 +39,14 @@ module.exports = {
   unsubscribe: function(req, res) {
     var addresses = req.body.addresses;
     var id = req.body.id;
-    console.log('addresses', addresses)
     addresses.forEach (function (address) {
-      ctxioClient.accounts(id).messages().get({from: address, date_after: 1420070400}, function (err, response) {
+      ctxioClient.accounts(id).messages().get({from: address}, function (err, response) {
         if (err) throw err;
         response.body.forEach (function(message) {
           var messageId = message.message_id;
           console.log('deleting', messageId)
           ctxioClient.accounts(id).messages(messageId).folders().post({add: 'Trash', remove: 'Inbox'}, function (err, response, request) {
             if (err) throw err;
-            console.log('req', request)
-            console.log('res', response)
           });
         });
       });

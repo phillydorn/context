@@ -20,6 +20,15 @@ angular.module('context.messages', [])
     bootbox.confirm("Are you sure you want to delete all messages from:"+ addressString, function (result) {
       if (result){
         Mail.unsubscribe($scope.selectedAddresses, $scope);
+        $scope.messages = $scope.messages.filter(function (message) {
+          var notSelected = true;
+          $scope.selectedAddresses.forEach(function (selected) {
+            if (message.address === selected) {
+              notSelected = false;
+            }
+          });
+          return notSelected;
+        });
       }
     })
   }
