@@ -15,7 +15,7 @@ angular.module('context.services', [])
     })
   }
 
-  var getMessagesForAccount = function(id) {
+  var getMessagesForAccount = function(id, $scope) {
     var that = this;
     this.id = id;
     this.messageList = [];
@@ -25,6 +25,7 @@ angular.module('context.services', [])
     })
     .then (function (messages){
       var messageObj = {};
+      console.log('allmessages', messages)
       messages.data.results.forEach(function (message){
         var subject = message.subject;
         var from = message.addresses.from.email;
@@ -41,7 +42,11 @@ angular.module('context.services', [])
         that.messageList.push(messageObj[key]);
       }
       console.log('addresses', that.messageList)
-      $location.path('/messages');
+      if ($location.path() !== '/messages') {
+        $location.path('/messages');
+      } else {
+        $scope.messages = that.messageList;
+      }
     })
   }
 
@@ -49,8 +54,9 @@ angular.module('context.services', [])
     $scope.messages = this.messageList;
   }
 
-  var unsubscribe = function (addresses) {
+  var unsubscribe = function (addresses, $scope) {
     var id = this.id;
+    var that = this;
     return $http({
       method: 'POST',
       url: 'api/messages',
@@ -59,9 +65,11 @@ angular.module('context.services', [])
         id: id
       }
     })
-    .then (function() {
-      bootbox.alert("Your messages have been deleted!");
-      $location.path('/');
+    .then (function(response) {
+      console.log('response', response)
+      that.getMessagesForAccount(id, $scope);
+      // bootbox.alert("Your messages have been deleted!");
+      // $location.path('/');
     });
   }
 

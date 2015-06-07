@@ -19,7 +19,7 @@ angular.module('context.messages', [])
     console.log('addressString',$scope.selectedAddresses)
     bootbox.confirm("Are you sure you want to delete all messages from:"+ addressString, function (result) {
       if (result){
-        Mail.unsubscribe($scope.selectedAddresses);
+        Mail.unsubscribe($scope.selectedAddresses, $scope);
       }
     })
   }

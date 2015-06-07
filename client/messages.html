@@ -1,6 +1,6 @@
 <div id="messagePage">
-  <h1 class = "message-headline">Your mailing lists</h1>
-  <h2 class = "message-headline">Please select e-mail lists to delete:</h2>
+  <h1 class = "message-headline">Your Mailing Lists</h1>
+  <h2 class = "message-headline">Please select e-mail lists to delete</h2>
   <form>
     <div class="container messageContainer">
       <div class = "message-group" ng-repeat = "message in messages">
@@ -11,7 +11,7 @@
           <p class="addresses">{{message.address}}</p>
           <p class = "showHide" ng-click = "message.shown = !message.shown">Show/Hide E-mails</p>
         </div>
-        <p class="subjects" ng-show="message.shown" ng-repeat= "subject in message.subjects">Subject: {{subject}}</p>
+        <p class="subjects" ng-show="message.shown" ng-repeat= "subject in message.subjects track by $index">Subject: {{subject}}</p>
       </div>
     </div>
     <button class = "btn-select" ng-click="filterMessages()" id="submit" >Submit</button>
