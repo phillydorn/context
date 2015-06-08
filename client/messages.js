@@ -8,8 +8,21 @@ angular.module('context.messages', [])
     Mail.displayMessages($scope);
   }();
 
-  $scope.selectAddress = function(address) {
-    $scope.selectedAddresses.push(address)
+  $scope.selectAddress = function(checkAddress) {
+    var selected = false;
+    var newAddresses = [];
+    $scope.selectedAddresses.forEach(function (address) {
+      if (address !== checkAddress) {
+        newAddresses.push(address);
+      } else {
+        selected = true;
+      }
+    })
+    $scope.selectedAddresses = newAddresses;
+    if (!selected) {
+      $scope.selectedAddresses.push(checkAddress)
+    }
+    console.log($scope.selectedAddresses)
   }
 
   $scope.filterMessages = function() {
@@ -32,17 +45,6 @@ angular.module('context.messages', [])
       }
     })
   }
-})
-
-.directive('toggleClass', function() {
-  return {
-      restrict: 'A',
-      link: function(scope, element, attrs) {
-          element.bind('click', function() {
-              element.toggleClass(attrs.toggleClass);
-          });
-      }
-  };
 });
 
 

@@ -4,9 +4,7 @@
   <form>
     <div class="container messageContainer">
       <div class = "message-group" ng-repeat = "message in messages">
-        <!-- <label class="checkbox-inline checker"> -->
         <input type="checkbox" class="checkbox-inline checker" value = "{{message.address}}" ng-click = "selectAddress(message.address)">
-      <!-- </label> -->
         <div class="addressContainer">
           <p class="addresses">{{message.address}}</p>
           <p class = "showHide" ng-click = "message.shown = !message.shown">Show/Hide E-mails</p>
