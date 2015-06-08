@@ -68,9 +68,9 @@ button:hover {
 .addresses {
   font-size: 22px;
   margin: 9px auto;
-  padding-top: 4px;
+  padding-top: 19px;
   display: block;
-  width: 50%;
+  width: 100%;
   text-align: center;
 }
 
