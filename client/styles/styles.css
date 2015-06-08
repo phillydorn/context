@@ -12,9 +12,8 @@
 }
 
 #messagePage {
-  height: 100%;
   background-image: url('./bg2.png');
-  background-size: cover;
+  background-repeat: repeat;
   padding: 120px 0;
 }
 
@@ -100,6 +99,11 @@ h2 {
   text-align: center;
 }
 
+.navbar-default .navbar-nav>li>a {
+  color: #333;
+  margin-left: 50px;
+  font-size: 16px;
+}
 .messageContainer {
   width: 50%;
   background-color: rgba(230,230,230,.5);
@@ -116,7 +120,10 @@ h2 {
   color: #FFBA31;
 }
 
-
+.navbar {
+  margin-bottom: -51px;
+  background-color: rgba(248, 248, 248, .75);
+}
 .showHide {
   color: #fff;
   display: inline;
