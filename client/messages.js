@@ -22,14 +22,12 @@ angular.module('context.messages', [])
     if (!selected) {
       $scope.selectedAddresses.push(checkAddress)
     }
-    console.log($scope.selectedAddresses)
   }
 
   $scope.filterMessages = function() {
     var addressString = $scope.selectedAddresses.reduce(function (prev, curr) {
       return prev + '<br>' + curr;
     },'');
-    console.log('addressString',$scope.selectedAddresses)
     bootbox.confirm("Are you sure you want to delete all messages from:"+ addressString, function (result) {
       if (result){
         Mail.unsubscribe($scope.selectedAddresses, $scope);

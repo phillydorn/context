@@ -29,7 +29,6 @@ angular.module('context.services', [])
     })
     .then (function (messages){
       var messageObj = {};
-      console.log('allmessages', messages)
       messages.data.results.forEach(function (message){
         var subject = message.subject;
         var from = message.addresses.from.email;
@@ -45,7 +44,6 @@ angular.module('context.services', [])
         messageObj[key].shown = false;
         that.messageList.push(messageObj[key]);
       }
-      console.log('addresses', that.messageList)
       if ($location.path() !== '/messages') {
         $location.path('/messages');
       } else {
@@ -70,9 +68,7 @@ angular.module('context.services', [])
       }
     })
     .then (function(response) {
-      console.log('response', response)
-      // bootbox.alert("Your messages have been deleted!");
-      // $location.path('/');
+      return;
     });
   }
 
